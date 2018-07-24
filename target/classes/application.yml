@@ -1,0 +1,53 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /wh
+upload:
+    #filePath: C://Users//Administrator//IdeaProjects//blog//upload
+    #静态文件只能放在dist目录
+    filePath: C://Users//Administrator//IdeaProjects//blog//src//main//resources//web//dist//upload
+spring:
+  #设置虚拟路径
+  #resources:
+    #static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${upload.filePath}
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/blog?characterEncoding=UTF-8
+    username: test
+    password: test
+    driver-class-name: com.mysql.jdbc.Driver
+    ###################以下为druid增加的配置###########################
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 下面为连接池的补充设置，应用到上面所有数据源中
+    # 初始化大小，最小，最大
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    # 配置获取连接等待超时的时间
+    maxWait: 60000
+    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    timeBetweenEvictionRunsMillis: 60000
+    # 配置一个连接在池中最小生存的时间，单位是毫秒
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    # 打开PSCache，并且指定每个连接上PSCache的大小
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+  redis:
+      database: 0
+      host: 127.0.0.1
+      port: 6379
+      password: 123456
+      #啟動redis: F:\redis-64.3.0.503目錄下執行：redis-server.exe redis.windows.conf
+mybatis:
+  check-config-location: true
+  #扫描项目中的pojo类
+  type-aliases-package: com.mason.blog.entity
+  #扫描mapper包下的xml文件
+  mapper-locations: classpath*:mapper/*.xml
+logging:
+  config: classpath:log4j2.xml
+
+
