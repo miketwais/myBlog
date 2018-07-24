@@ -57,3 +57,13 @@
 * 说明
 
  > 简单的blog项目，后续会不断完善功能。    
+
+
+* 截图
+ > 前台
+  ![image](https://github.com/miketwais/img11/blob/master/1.png)
+  ![image](https://github.com/miketwais/img11/blob/master/2.png)
+  
+  
+ > 后台
+   ![image](https://github.com/miketwais/img11/blob/master/3.png)
